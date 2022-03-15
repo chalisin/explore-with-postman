@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "7794e6f3-b32e-4791-b235-2b1cd0a5c304",
+		"name": "Restful Endpoint Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_apigateway}}/services",
+					"host": [
+						"{{url_apigateway}}"
+					],
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameEndpoint\": \"\",\r\n    \"stateEndpoint\": true,\r\n    \"urlEndpoint\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_apigateway}}/services",
+					"host": [
+						"{{url_apigateway}}"
+					],
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_apigateway}}/services/getname/openl_pyme_reglas_cl",
+					"host": [
+						"{{url_apigateway}}"
+					],
+					"path": [
+						"services",
+						"getname",
+						"openl_pyme_reglas_cl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameEndpoint\": \"\",\r\n    \"stateEndpoint\": true,\r\n    \"urlEndpoint\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_apigateway}}/services/{{$randomUUID}}",
+					"host": [
+						"{{url_apigateway}}"
+					],
+					"path": [
+						"services",
+						"{{$randomUUID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
