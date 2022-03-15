@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "dad5117a-642d-4750-a000-65c922158f3d",
+		"name": "Restful Dynamic Rating",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tarifa Autos Colombia",
+			"item": [
+				{
+					"name": "Individual Auto - New Business",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"//we created at least one booking at the folder level, so there should always be bookings",
+									"pm.test(\"Response is not empty\", function () {",
+									"    // See Chaijs docs for complete list of available assertions",
+									"    // https://www.chaijs.com/api/bdd",
+									"    pm.expect(jsonData).to.not.have.lengthOf(0);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "VN9urxOPY4wNl2zOYeMEVYzTs1LC",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"poliza\": {\r\n            \"idTransaccion\": \"11792703\",\r\n            \"tipoNegocio\": \"1\",\r\n            \"canal\": \"1\",\r\n            \"formaPagoPol\": \"12\",\r\n            \"descuentoComercial\": \"0\",\r\n            \"suavizacion\": \"0\",\r\n            \"comisionIntermediario\": \"0\",\r\n            \"producto\": \"6061\",\r\n            \"sucursal\": \"97\",\r\n            \"factorProrrata\": \"1\",\r\n            \"codigoIntermediario\": \"4000100\",\r\n            \"vinculacion\": \"0\",\r\n            \"factorBancario\": \"1\",\r\n            \"genero\": \"2\",\r\n            \"edadConductor\": \"53\",\r\n            \"antiguedadConductor\": \"0\",\r\n            \"ocupacion\": \"220\",\r\n            \"siniestro\": \"0\",\r\n            \"departamento\": \"44\",\r\n            \"ciudad\": \"430\",\r\n            \"acierta\": \"-1\",\r\n            \"dpnr\": \"0\",\r\n            \"antiguedadLiberty\": \"0\",\r\n            \"anosSinSiniestro\": \"0\",\r\n            \"diasCotizacionVigente\": \"0\",\r\n            \"numeroHijos\": \"0\",\r\n            \"actividadEconomica\": \"0\",\r\n            \"numeroMultas\": \"0\",\r\n            \"gravedadMultas\": \"0\",\r\n            \"numeroMultasVigAnterior\": \"0\",\r\n            \"barrio\": \"1\",\r\n            \"localidad\": \"7\",\r\n            \"estrato\": \"4\",\r\n            \"cancelacionLicencia\": \"0\",\r\n            \"antiguedadLicencia\": \"10\",\r\n            \"procedencia\": \"0\",\r\n            \"siniestrosHistoricos\": \"0\",\r\n            \"aseguradoraAnterior\": \"0\",\r\n            \"anosAseguradoraAnterior\": \"1\",\r\n            \"marca\": \"008\",\r\n            \"clase\": \"01\",\r\n            \"agrupadorVehiculo\": \"T0000283\",\r\n            \"antiguedadVehiculo\": \"-1\",\r\n            \"cilindraje\": \"1997\",\r\n            \"combustible\": \"4\",\r\n            \"pesoVehiculo\": \"1605\",\r\n            \"tipoCaja\": \"3\",\r\n            \"transmision\": \"4\",\r\n            \"puertas\": \"2\",\r\n            \"dispositivoSeguridad\": \"0\",\r\n            \"valorAseguradoVehi\": \"154900000\",\r\n            \"valorAseguradoAcce\": \"0\",\r\n            \"uso\": \"3\",\r\n            \"transporteCombustible\": \"0\",\r\n            \"servicio\": \"1\",\r\n            \"tipoCampero\": \"0\",\r\n            \"blindaje\": \"0\",\r\n            \"pesoCategoria\": \"2\",\r\n            \"potencia\": \"0\",\r\n            \"kmSiNo\": \"0\",\r\n            \"equipoEspecial\": \"0\",\r\n            \"paisOrigen\": \"170\",\r\n            \"codigoFasecolda\": \"00801384\",\r\n            \"semilla\": \"84069400801384\",\r\n            \"PriceTestIn\": \"0\",\r\n            \"documentoIdentidad\": \"84069457\",\r\n            \"tipoDocumento\": \"36\",\r\n            \"amparos\": [\r\n                {\r\n                    \"codigo\": \"755\",\r\n                    \"valorAseguradoGar\": \"1000000000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"756\",\r\n                    \"valorAseguradoGar\": \"1000000000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"757\",\r\n                    \"valorAseguradoGar\": \"2000000000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"758\",\r\n                    \"valorAseguradoGar\": \"154900000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"759\",\r\n                    \"valorAseguradoGar\": \"154900000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"760\",\r\n                    \"valorAseguradoGar\": \"154900000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"10\",\r\n                    \"salariosDeducible\": \"1\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"761\",\r\n                    \"valorAseguradoGar\": \"154900000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"10\",\r\n                    \"salariosDeducible\": \"1\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"762\",\r\n                    \"valorAseguradoGar\": \"154900000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"10\",\r\n                    \"salariosDeducible\": \"1\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"763\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"764\",\r\n                    \"valorAseguradoGar\": \"1200000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"765\",\r\n                    \"valorAseguradoGar\": \"1200000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"766\",\r\n                    \"valorAseguradoGar\": \"13385074\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"767\",\r\n                    \"valorAseguradoGar\": \"6770660\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"768\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"770\",\r\n                    \"valorAseguradoGar\": \"40000000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"771\",\r\n                    \"valorAseguradoGar\": \"44000000\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"10\",\r\n                    \"salariosDeducible\": \"1\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"773\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"774\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"775\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                },\r\n                {\r\n                    \"codigo\": \"778\",\r\n                    \"valorAseguradoGar\": \"0\",\r\n                    \"tipoDeducible\": \"0\",\r\n                    \"porcentajeDeducible\": \"0\",\r\n                    \"salariosDeducible\": \"0\",\r\n                    \"valorDeducible\": \"0\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/newBusinessCol",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"newBusinessCol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Pesados - New Business",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "VN9urxOPY4wNl2zOYeMEVYzTs1LC",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"10977548\",\r\n      \"tipoNegocio\": \"1\",\r\n      \"canal\": \"1\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"suavizacion\": \"0\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"6039\",\r\n      \"sucursal\": \"97\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4000100\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"1\",\r\n      \"edadConductor\": \"28\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"estadoCivil\": \"5\",\r\n      \"ocupacion\": \"190\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"-1\",\r\n      \"dpnr\": \"0\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"016\",\r\n      \"clase\": \"10\",\r\n      \"agrupadorVehiculo\": \"T0002405\",\r\n      \"antiguedadVehiculo\": \"-1\",\r\n      \"cilindraje\": \"10000\",\r\n      \"combustible\": \"1\",\r\n      \"pesoVehiculo\": \"6770\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"7\",\r\n      \"puertas\": \"2\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"169900000\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"31\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"3\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"4\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"0\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"01610010\",\r\n      \"semilla\": \"10779101610010\",\r\n      \"PriceTestIn\": \"0\",\r\n      \"capacidadOcupantes\": \"5\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"9220\",\r\n          \"valorAseguradoGar\": \"2500000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2500000\"\r\n        },\r\n        {\r\n          \"codigo\": \"9036\",\r\n          \"valorAseguradoGar\": \"2500000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2500000\"\r\n        },\r\n        {\r\n          \"codigo\": \"9037\",\r\n          \"valorAseguradoGar\": \"2500000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2500000\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"169900000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"169900000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"169900000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"4400000\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"169900000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"4400000\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"169900000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"950000\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"40000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"788\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/newBusinessPesados",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"newBusinessPesados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Motos - New Business",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "1LXMYbNzAYGzH0aimkNruA3ysqAT",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"9817647\",\r\n      \"tipoNegocio\": \"1\",\r\n      \"canal\": \"1\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"descuentoComercial\": \"0\",\r\n      \"suavizacion\": \"0\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"6034\",\r\n      \"sucursal\": \"97\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4000100\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"1\",\r\n      \"edadConductor\": \"22\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"estadoCivil\": \"1\",\r\n      \"ocupacion\": \"181\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"-1\",\r\n      \"dpnr\": \"0\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"378\",\r\n      \"clase\": \"17\",\r\n      \"agrupadorVehiculo\": \"MT000005\",\r\n      \"antiguedadVehiculo\": \"0\",\r\n      \"cilindraje\": \"300\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"180\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"1\",\r\n      \"puertas\": \"0\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"17500000\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"37\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"1\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"1\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"37817004\",\r\n      \"semilla\": \"10203037817004\",\r\n      \"PriceTestIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"9220\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"9036\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"9037\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"17500000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2000000\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"17500000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2000000\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"17500000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"2000000\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"17500000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"950000\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"764\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"765\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"785\",\r\n          \"valorAseguradoGar\": \"2500000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/newBusinessMotos",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"newBusinessMotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Taxis - New Business",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "POphhp00EuvfvqtCkuA9oHZY7sm7",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"10977433\",\r\n      \"tipoNegocio\": \"1\",\r\n      \"canal\": \"1\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"descuentoComercial\": \"0\",\r\n      \"suavizacion\": \"0\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"6038\",\r\n      \"sucursal\": \"97\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4000100\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"1\",\r\n      \"edadConductor\": \"26\",\r\n      \"antiguedadConductor\": \"1\",\r\n      \"ocupacion\": \"190\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"41\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"-1\",\r\n      \"dpnr\": \"10\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"046\",\r\n      \"clase\": \"01\",\r\n      \"agrupadorVehiculo\": \"TTX00001\",\r\n      \"antiguedadVehiculo\": \"6\",\r\n      \"cilindraje\": \"1248\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"845\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"4\",\r\n      \"puertas\": \"5\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"22800000\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"19\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"2\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"0\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"04601156\",\r\n      \"semilla\": \"10207804601156\",\r\n      \"PriceTestIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"9220\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"1600000\"\r\n        },\r\n        {\r\n          \"codigo\": \"9036\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"1600000\"\r\n        },\r\n        {\r\n          \"codigo\": \"9037\",\r\n          \"valorAseguradoGar\": \"600000000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"1600000\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"22800000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"22800000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"22800000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"1600000\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"22800000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"1600000\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"22800000\",\r\n          \"tipoDeducible\": \"1\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"950000\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"40000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"788\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/newBusinessTaxis",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"newBusinessTaxis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUAC Individual - New Business",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "VN9urxOPY4wNl2zOYeMEVYzTs1LC",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"poliza\": {\r\n            \"canal\": \"6\",\r\n            \"codigoIntermediario\": \"4091166\",\r\n            \"comisionIntermediario\": \"0\",\r\n            \"factorProrrata\": \"1\",\r\n            \"formaPagoPol\": \"12\",\r\n            \"producto\": \"900753\",\r\n            \"sucursal\": \"14\",\r\n            \"tipoNegocio\": \"1\",\r\n            \"tipoRiesgo\": \"1\",\r\n            \"tipoTarifa\": \"5\",\r\n            \"descuentoClase\": \"0\",\r\n            \"otrosLAEC\": \"0\",\r\n            \"gastosMercaderoC\": \"0\",\r\n            \"gastosAdministrativosC\": \"0\",\r\n            \"otrosGastosC\": \"0\",\r\n            \"impuestosC\": \"0\",\r\n            \"utilidadC\": \"0\",\r\n            \"comisionEspecialC\": \"3.1\",\r\n            \"factorCredibilidad\": \"0\",\r\n            \"tasaMinimaC\": \"0\",\r\n            \"tasaMaximaC\": \"0\",\r\n            \"semilla\": \"52419301601100\",\r\n            \"vehiculo\": [\r\n                {\r\n                    \"idTransaccion\": \"18682114\",\r\n                    \"descuentoComercial\": \"0\",\r\n                    \"suavizacion\": \"0\",\r\n                    \"vinculacion\": \"0\",\r\n                    \"factorBancario\": \"1\",\r\n                    \"genero\": \"2\",\r\n                    \"edadConductor\": \"44\",\r\n                    \"antiguedadConductor\": \"5\",\r\n                    \"estadoCivil\": \"5\",\r\n                    \"ocupacion\": \"1470\",\r\n                    \"siniestro\": \"0\",\r\n                    \"departamento\": \"0\",\r\n                    \"ciudad\": \"0\",\r\n                    \"acierta\": \"844\",\r\n                    \"dpnr\": \"50\",\r\n                    \"antiguedadLiberty\": \"0\",\r\n                    \"anosSinSiniestro\": \"0\",\r\n                    \"diasCotizacionVigente\": \"0\",\r\n                    \"numeroHijos\": \"0\",\r\n                    \"actividadEconomica\": \"0\",\r\n                    \"numeroMultas\": \"0\",\r\n                    \"gravedadMultas\": \"0\",\r\n                    \"numeroMultasVigAnterior\": \"0\",\r\n                    \"barrio\": \"1\",\r\n                    \"localidad\": \"7\",\r\n                    \"estrato\": \"4\",\r\n                    \"cancelacionLicencia\": \"0\",\r\n                    \"antiguedadLicencia\": \"10\",\r\n                    \"procedencia\": \"0\",\r\n                    \"siniestrosHistoricos\": \"0\",\r\n                    \"aseguradoraAnterior\": \"0\",\r\n                    \"anosAseguradoraAnterior\": \"1\",\r\n                    \"marca\": \"016\",\r\n                    \"clase\": \"01\",\r\n                    \"agrupadorVehiculo\": \"T0000391\",\r\n                    \"antiguedadVehiculo\": \"-1\",\r\n                    \"cilindraje\": \"1389\",\r\n                    \"combustible\": \"4\",\r\n                    \"pesoVehiculo\": \"955\",\r\n                    \"semilla\": \"52419301601100\",\r\n                    \"tipoCaja\": \"2\",\r\n                    \"transmision\": \"4\",\r\n                    \"puertas\": \"5\",\r\n                    \"dispositivoSeguridad\": \"0\",\r\n                    \"valorAseguradoVehi\": \"24700000\",\r\n                    \"valorAseguradoAcce\": \"0\",\r\n                    \"uso\": \"28\",\r\n                    \"transporteCombustible\": \"0\",\r\n                    \"servicio\": \"1\",\r\n                    \"tipoCampero\": \"0\",\r\n                    \"blindaje\": \"0\",\r\n                    \"pesoCategoria\": \"1\",\r\n                    \"potencia\": \"0\",\r\n                    \"ceroKmSiNo\": \"0\",\r\n                    \"equipoEspecial\": \"0\",\r\n                    \"paisOrigen\": \"170\",\r\n                    \"codigoFasecolda\": \"01601100\",\r\n                    \"documentoIdentidad\": \"52419316\",\r\n                    \"tipoDocumento\": \"36\",\r\n                    \"numCompaniasDif\": \"-2\",\r\n                    \"tiempoAsegurado\": \"-2\",\r\n                    \"anosSinMulta\": \"-2\",\r\n                    \"ultimoTipoMulta\": \"-2\",\r\n                    \"tuvoMulta\": \"0\",\r\n                    \"anosEntreMultas\": \"-2\",\r\n                    \"tiempoPromedioAseg\": \"0\",\r\n                    \"capacidadOcupantes\": \"5\",\r\n                    \"antiguedadCoomeva\": \"0\",\r\n                    \"otrasPolizasCoomeva\": \"0\",\r\n                    \"amparos\": [\r\n                        {\r\n                            \"codigo\": \"9220\",\r\n                            \"valorAseguradoGar\": \"3000000000\",\r\n                            \"tipoDeducible\": \"1\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"9036\",\r\n                            \"valorAseguradoGar\": \"3000000000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"9037\",\r\n                            \"valorAseguradoGar\": \"3000000000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"758\",\r\n                            \"valorAseguradoGar\": \"24700000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"20\",\r\n                            \"salariosDeducible\": \"2\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"759\",\r\n                            \"valorAseguradoGar\": \"24700000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"20\",\r\n                            \"salariosDeducible\": \"2\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"760\",\r\n                            \"valorAseguradoGar\": \"24700000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"20\",\r\n                            \"salariosDeducible\": \"2\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"761\",\r\n                            \"valorAseguradoGar\": \"24700000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"20\",\r\n                            \"salariosDeducible\": \"2\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"762\",\r\n                            \"valorAseguradoGar\": \"24700000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"20\",\r\n                            \"salariosDeducible\": \"2\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"763\",\r\n                            \"valorAseguradoGar\": \"0\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"764\",\r\n                            \"valorAseguradoGar\": \"1200000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"765\",\r\n                            \"valorAseguradoGar\": \"1200000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"766\",\r\n                            \"valorAseguradoGar\": \"0\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"767\",\r\n                            \"valorAseguradoGar\": \"0\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"768\",\r\n                            \"valorAseguradoGar\": \"0\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"2\"\r\n                        },\r\n                        {\r\n                            \"codigo\": \"770\",\r\n                            \"valorAseguradoGar\": \"30000000\",\r\n                            \"tipoDeducible\": \"0\",\r\n                            \"porcentajeDeducible\": \"0\",\r\n                            \"salariosDeducible\": \"0\",\r\n                            \"valorDeducible\": \"0\",\r\n                            \"tipoAsistencia\": \"0\"\r\n                        }\r\n                    ],\r\n                    \"dispositivosSeguridad\": [\r\n                        {\r\n                            \"tipoDispositivo\": \" \",\r\n                            \"duenoDispositivo\": \" \"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/collectNewBusiness",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"collectNewBusiness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto - Renew",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "VN9urxOPY4wNl2zOYeMEVYzTs1LC",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "ruleidorigin11",
+								"value": "30134",
+								"type": "text"
+							},
+							{
+								"key": "polrenew",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"8807450\",\r\n      \"tipoNegocio\": \"1\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"6031\",\r\n      \"sucursal\": \"18\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4092664\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"2\",\r\n      \"edadConductor\": \"78\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"ocupacion\": \"2835\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"799\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"088\",\r\n      \"clase\": \"01\",\r\n      \"agrupadorVehiculo\": \"T0880102\",\r\n      \"antiguedadVehiculo\": \"2\",\r\n      \"cilindraje\": \"1373\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"915\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"4\",\r\n      \"puertas\": \"5\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"48529999\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"3\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"1\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"1\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"08801041\",\r\n      \"semilla\": \"51688408801041\",\r\n      \"valorAseguradoVehiAnterior\": \"48529999\",\r\n      \"valorAseguradoAcceAnterior\": \"0\",\r\n      \"PriceOptFactorIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"755\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"60554\"\r\n        },\r\n        {\r\n          \"codigo\": \"756\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"10046\"\r\n        },\r\n        {\r\n          \"codigo\": \"757\",\r\n          \"valorAseguradoGar\": \"2000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4305\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"30369\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"408643\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"1.5\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"539414\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4209\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26629\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"764\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"6335\"\r\n        },\r\n        {\r\n          \"codigo\": \"765\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"14925\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"40443\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"23223\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"156364\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"3080\"\r\n        },\r\n        {\r\n          \"codigo\": \"771\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26249\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"11434\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"5794\"\r\n        },\r\n        {\r\n          \"codigo\": \"776\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"53519\"\r\n        },\r\n        {\r\n          \"codigo\": \"778\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"42284\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/renewBusiness",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"renewBusiness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Pesados - Renew",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "MNpT1RrxTzirrMf924EQ4PmImO1f",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "ruleidorigin11",
+								"value": "30134",
+								"type": "text"
+							},
+							{
+								"key": "polrenew",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"8807450\",\r\n      \"tipoNegocio\": \"2\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"31654\",\r\n      \"sucursal\": \"18\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4092664\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"2\",\r\n      \"edadConductor\": \"78\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"ocupacion\": \"2835\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"799\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"088\",\r\n      \"clase\": \"01\",\r\n      \"agrupadorVehiculo\": \"T0880102\",\r\n      \"antiguedadVehiculo\": \"2\",\r\n      \"cilindraje\": \"1373\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"915\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"4\",\r\n      \"puertas\": \"5\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"48529999\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"3\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"1\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"1\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"08801041\",\r\n      \"semilla\": \"51688408801041\",\r\n      \"valorAseguradoVehiAnterior\": \"48529999\",\r\n      \"valorAseguradoAcceAnterior\": \"0\",\r\n      \"PriceOptFactorIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"755\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"60554\"\r\n        },\r\n        {\r\n          \"codigo\": \"756\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"10046\"\r\n        },\r\n        {\r\n          \"codigo\": \"757\",\r\n          \"valorAseguradoGar\": \"2000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4305\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"30369\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"408643\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"1.5\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"539414\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4209\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26629\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"764\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"6335\"\r\n        },\r\n        {\r\n          \"codigo\": \"765\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"14925\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"40443\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"23223\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"156364\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"3080\"\r\n        },\r\n        {\r\n          \"codigo\": \"771\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26249\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"11434\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"5794\"\r\n        },\r\n        {\r\n          \"codigo\": \"776\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"53519\"\r\n        },\r\n        {\r\n          \"codigo\": \"778\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"42284\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/renewBusinessPesados",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"renewBusinessPesados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Motos - Renew",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "MNpT1RrxTzirrMf924EQ4PmImO1f",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "ruleidorigin11",
+								"value": "30134",
+								"type": "text"
+							},
+							{
+								"key": "polrenew",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"8807450\",\r\n      \"tipoNegocio\": \"2\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"31652\",\r\n      \"sucursal\": \"18\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4092664\",\r\n      \"vinculacion\": \"0\",   \r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"2\",\r\n      \"edadConductor\": \"78\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"ocupacion\": \"2835\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"799\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"088\",\r\n      \"clase\": \"01\",\r\n      \"agrupadorVehiculo\": \"T0880102\",\r\n      \"antiguedadVehiculo\": \"2\",\r\n      \"cilindraje\": \"1373\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"915\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"4\",\r\n      \"puertas\": \"5\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"48529999\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"3\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"1\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"1\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"08801041\",\r\n      \"semilla\": \"51688408801041\",\r\n      \"valorAseguradoVehiAnterior\": \"48529999\",\r\n      \"valorAseguradoAcceAnterior\": \"0\",\r\n      \"PriceOptFactorIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"755\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"60554\"\r\n        },\r\n        {\r\n          \"codigo\": \"756\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"10046\"\r\n        },\r\n        {\r\n          \"codigo\": \"757\",\r\n          \"valorAseguradoGar\": \"2000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4305\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"30369\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"408643\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"1.5\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"539414\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4209\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26629\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"764\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"6335\"\r\n        },\r\n        {\r\n          \"codigo\": \"765\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"14925\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"40443\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"23223\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"156364\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"3080\"\r\n        },\r\n        {\r\n          \"codigo\": \"771\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26249\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"11434\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"5794\"\r\n        },\r\n        {\r\n          \"codigo\": \"776\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"53519\"\r\n        },\r\n        {\r\n          \"codigo\": \"778\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"42284\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/renewBusinessMotos",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"renewBusinessMotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Auto Taxis - Renew",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "A1kok8lniZPMQq7E",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "ocNAIh5odp44uEdBOoyLxj1UvExGY1wM",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "MNpT1RrxTzirrMf924EQ4PmImO1f",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "ruleidorigin11",
+								"value": "30134",
+								"type": "text"
+							},
+							{
+								"key": "polrenew",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"8807450\",\r\n      \"tipoNegocio\": \"2\",\r\n      \"formaPagoPol\": \"1\",\r\n      \"comisionIntermediario\": \"0\",\r\n      \"producto\": \"31753\",\r\n      \"sucursal\": \"18\",\r\n      \"factorProrrata\": \"1\",\r\n      \"codigoIntermediario\": \"4092664\",\r\n      \"vinculacion\": \"0\",\r\n      \"factorBancario\": \"1\",\r\n      \"genero\": \"2\",\r\n      \"edadConductor\": \"78\",\r\n      \"antiguedadConductor\": \"0\",\r\n      \"ocupacion\": \"2835\",\r\n      \"siniestro\": \"0\",\r\n      \"departamento\": \"11\",\r\n      \"ciudad\": \"1\",\r\n      \"acierta\": \"799\",\r\n      \"antiguedadLiberty\": \"0\",\r\n      \"anosSinSiniestro\": \"0\",\r\n      \"diasCotizacionVigente\": \"0\",\r\n      \"numeroHijos\": \"0\",\r\n      \"actividadEconomica\": \"0\",\r\n      \"numeroMultas\": \"0\",\r\n      \"gravedadMultas\": \"0\",\r\n      \"numeroMultasVigAnterior\": \"0\",\r\n      \"barrio\": \"1\",\r\n      \"localidad\": \"7\",\r\n      \"estrato\": \"4\",\r\n      \"cancelacionLicencia\": \"0\",\r\n      \"antiguedadLicencia\": \"10\",\r\n      \"procedencia\": \"0\",\r\n      \"siniestrosHistoricos\": \"0\",\r\n      \"aseguradoraAnterior\": \"0\",\r\n      \"anosAseguradoraAnterior\": \"1\",\r\n      \"marca\": \"088\",\r\n      \"clase\": \"01\",\r\n      \"agrupadorVehiculo\": \"T0880102\",\r\n      \"antiguedadVehiculo\": \"2\",\r\n      \"cilindraje\": \"1373\",\r\n      \"combustible\": \"4\",\r\n      \"pesoVehiculo\": \"915\",\r\n      \"tipoCaja\": \"2\",\r\n      \"transmision\": \"4\",\r\n      \"puertas\": \"5\",\r\n      \"dispositivoSeguridad\": \"0\",\r\n      \"valorAseguradoVehi\": \"48529999\",\r\n      \"valorAseguradoAcce\": \"0\",\r\n      \"uso\": \"3\",\r\n      \"transporteCombustible\": \"0\",\r\n      \"servicio\": \"1\",\r\n      \"tipoCampero\": \"0\",\r\n      \"blindaje\": \"0\",\r\n      \"pesoCategoria\": \"1\",\r\n      \"potencia\": \"0\",\r\n      \"kmSiNo\": \"1\",\r\n      \"equipoEspecial\": \"0\",\r\n      \"paisOrigen\": \"170\",\r\n      \"codigoFasecolda\": \"08801041\",\r\n      \"semilla\": \"51688408801041\",\r\n      \"valorAseguradoVehiAnterior\": \"48529999\",\r\n      \"valorAseguradoAcceAnterior\": \"0\",\r\n      \"PriceOptFactorIn\": \"0\",\r\n      \"amparos\": [\r\n        {\r\n          \"codigo\": \"755\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"60554\"\r\n        },\r\n        {\r\n          \"codigo\": \"756\",\r\n          \"valorAseguradoGar\": \"1000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"10046\"\r\n        },\r\n        {\r\n          \"codigo\": \"757\",\r\n          \"valorAseguradoGar\": \"2000000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4305\"\r\n        },\r\n        {\r\n          \"codigo\": \"758\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"30369\"\r\n        },\r\n        {\r\n          \"codigo\": \"759\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"408643\"\r\n        },\r\n        {\r\n          \"codigo\": \"760\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"1.5\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"539414\"\r\n        },\r\n        {\r\n          \"codigo\": \"761\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"4209\"\r\n        },\r\n        {\r\n          \"codigo\": \"762\",\r\n          \"valorAseguradoGar\": \"48529999\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26629\"\r\n        },\r\n        {\r\n          \"codigo\": \"763\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"0\"\r\n        },\r\n        {\r\n          \"codigo\": \"764\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"6335\"\r\n        },\r\n        {\r\n          \"codigo\": \"765\",\r\n          \"valorAseguradoGar\": \"1200000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"14925\"\r\n        },\r\n        {\r\n          \"codigo\": \"766\",\r\n          \"valorAseguradoGar\": \"13385074\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"40443\"\r\n        },\r\n        {\r\n          \"codigo\": \"767\",\r\n          \"valorAseguradoGar\": \"6770660\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"23223\"\r\n        },\r\n        {\r\n          \"codigo\": \"768\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"156364\"\r\n        },\r\n        {\r\n          \"codigo\": \"770\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"3080\"\r\n        },\r\n        {\r\n          \"codigo\": \"771\",\r\n          \"valorAseguradoGar\": \"11000000\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"10\",\r\n          \"salariosDeducible\": \"1\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"26249\"\r\n        },\r\n        {\r\n          \"codigo\": \"773\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"11434\"\r\n        },\r\n        {\r\n          \"codigo\": \"774\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"5794\"\r\n        },\r\n        {\r\n          \"codigo\": \"776\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"53519\"\r\n        },\r\n        {\r\n          \"codigo\": \"778\",\r\n          \"valorAseguradoGar\": \"0\",\r\n          \"tipoDeducible\": \"0\",\r\n          \"porcentajeDeducible\": \"0\",\r\n          \"salariosDeducible\": \"0\",\r\n          \"valorDeducible\": \"0\",\r\n          \"valorPrimaAnualAnterior\": \"42284\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/auto-pricing/renewBusinessTaxis",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"auto-pricing",
+								"renewBusinessTaxis"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Tarifa Autos Ecuador",
+			"item": [
+				{
+					"name": "Invidual Auto EC - New Business",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "u8gPBAQaGgm7bajF",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "MB71gk7KaqA8n2jYy7V0nTrVyOgvufSe",
+									"type": "string"
+								},
+								{
+									"key": "challengeAlgorithm",
+									"value": "S256",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{url_apigee_east}}/oauth/access-token",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer MQH2AkENHKiP568c3NH2DSC7uPWd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"poliza\": {\r\n      \"idTransaccion\": \"12323015\",\r\n      \"tipoNegocio\": \"1\",\r\n      \"producto\": \"\",\r\n      \"vehiculo\": [\r\n        {\r\n          \"genero\": \"M\",\r\n          \"tipoPlan\": \"Medio\",\r\n          \"edadConductor\": \"43\",\r\n          \"estadoCivil\": \"2\",\r\n          \"provincia\": \"GUAYAS\",\r\n          \"canton\": \"GUAYAQUIL\",\r\n          \"antiguedadVehiculo\": \"1\",\r\n          \"cilindraje\": \"\",\r\n          \"combustible\": \"\",\r\n          \"valorAseguradoVehi\": \"14436\",\r\n          \"valorAccesorios\": \"0\",\r\n          \"rangoIngresos\": \"\",\r\n          \"profesion\": \"EMPLEADO\",\r\n          \"paisOrigen\": \"\",\r\n          \"clase\": \"AUTOMÓVIL\",\r\n          \"subClase\": \"LIVIANO\",\r\n          \"marca\": \"HYUNDAI\",\r\n          \"modelo\": \"GRAND I10 AC 1.2 4P 4X2 TM\",\r\n          \"autcolorprimario\": \"\",\r\n          \"autcapacidadPasajeros\": \"\",\r\n          \"actividadEmpresa\": \"\",\r\n          \"antiguedadEmpresa\": \"\",\r\n          \"tipoUso\": \"Personal\",\r\n          \"experience\": \"Seguro Nuevo\",\r\n          \"scoreGenerico\": \"500\",\r\n          \"scoreSobreendeudamiento\": \"\",\r\n          \"scoresociodemografico\": \"\",\r\n          \"antiguedadLiberty\": \"0\",\r\n          \"numReclamosLiberty\": \"0\",\r\n          \"amparos\": [\r\n            {\r\n              \"amparo\": \"Partial_Damage\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Partial_Theft\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Total_Damage\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Total_Theft\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Accidental_Death\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Accidental_Medical_Expenses\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Third_Party_Civil_Liability_Injuries\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            },\r\n            {\r\n              \"amparo\": \"Third_Party_Civil_Liability_Damages\",\r\n              \"valorAseguradoGar\": \"14436\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_apigee_east}}/ec-auto-pricing/newBusiness",
+							"host": [
+								"{{url_apigee_east}}"
+							],
+							"path": [
+								"ec-auto-pricing",
+								"newBusiness"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tarifa Pyme Colombia",
+			"item": []
+		},
+		{
+			"name": "Tarifa Home Colombia",
+			"item": []
+		},
+		{
+			"name": "Tarifa Pyme Chile",
+			"item": []
+		},
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains access_token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have. (\"access_token\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "MB71gk7KaqA8n2jYy7V0nTrVyOgvufSe",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "u8gPBAQaGgm7bajF",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_apigee_east}}/oauth/access-token",
+					"host": [
+						"{{url_apigee_east}}"
+					],
+					"path": [
+						"oauth",
+						"access-token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
